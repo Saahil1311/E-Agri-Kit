@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>E-Agri Kit</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/animate.css')}}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/icomoon.css')}}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/flexslider.css')}}">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="{{url_for('static', filename='fonts/flaticon/font/flaticon.css')}}">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.min.css')}}">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+	<!-- Modernizr JS -->
+	<script src="{{url_for('static', filename='js/modernizr-2.6.2.min.js')}}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="{{url_for('static', filename='js/respond.min.js')}}"></script>
+	<![endif]-->
+
+
+	</head>
+	<body>
+	<div id="colorlib-page">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+			<h1 id="colorlib-logo"><a href="#">E-Agri Kit</a></h1>
+			<nav id="colorlib-main-menu" role="navigation"><br><br><br><br>
+				<ul>
+					<li ><a href="/">Home</a></li>
+					<li ><a href="/viewcrop">View Crop Details</a></li>
+					<li class="colorlib-active"><a href="/croprequest">Requests</a></li>
+<!--					<li><a href="/viewfunds">Funds Data</a></li>-->
+<!--					<li><a href="/contact">Crop Selling</a></li>-->
+					<li><a href="/buyer">Logout</a></li>
+				</ul>
+			</nav>
+
+<!--			<div class="colorlib-footer">-->
+<!--				<p><small>&copy; &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;-->
+<!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> Distributed by: <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>-->
+<!--&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt; </span> <span>Demo Images: <a href="http://nothingtochance.co/" target="_blank">nothingtochance.co</a></span></small></p>-->
+<!--				<ul>-->
+<!--					<li><a href="#"><i class="icon-facebook2"></i></a></li>-->
+<!--					<li><a href="#"><i class="icon-twitter2"></i></a></li>-->
+<!--					<li><a href="#"><i class="icon-instagram"></i></a></li>-->
+<!--					<li><a href="#"><i class="icon-linkedin2"></i></a></li>-->
+<!--				</ul>-->
+<!--			</div>-->
+
+		</aside>
+
+		<div id="colorlib-main">
+
+			<div class="colorlib-contact">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Welocme to</span>
+							<h2 class="colorlib-heading">Buyer Information Page</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="colorlib-icon" style="padding-left:100px;">
+<!--									<i class="icon-globe-outline"></i>-->
+								</div>
+<!--								<div class="colorlib-text">-->
+<!--									<p ><a href="#">Former</a></p>-->
+									<a href="#">
+
+							<div class="colorlib-feature colorlib-feature-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft" >
+											<br><br><br><br><img border="0" alt="W3Schools" src="{{url_for('static', filename='images/j.jpg')}}" style="height:400px;" >
+
+							</div></a>
+								</div>
+
+						</div>
+                        <br><br><br><br>
+						<div class="col-md-7 col-md-push-1">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
+									<center><h2 style="color:green"><b>Buyer & Farmer Chatting Page</b></h2></center>
+									  <table style="border: 4px solid white; background-color:#337ab7 !important; " width="1300">
+
+
+<div style="background-color:">
+										  {% for i in range( row_val|length  )%}
+{% if row_val[i][1]=='Farmer'  %}
+<p>{{row_val[i][0]}}</p>
+
+
+{%elif row_val[1][i]!='Farmer'  %}
+
+<p style="color:red" align="right">{{row_val[i][0]}}</p>
+										  {% endif%}
+
+
+{% endfor %}
+
+</div><br><br>
+
+								<b><a href="{{ url_for('croprequest')}}"  method="post" style="color: white" class="btn btn-danger">Previous page</a></td></b>
+
+
+                  </table>
+<!--									<img src="static/images/u.jpg">-->
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="map"></div>
+
+			<div id="get-in-touch" class="colorlib-bg-color">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<h2>Get in Touch!</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<p class="colorlib-lead">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<p><a href="#" class="btn btn-primary btn-learn">Contact me!</a></p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+	<!-- jQuery Easing -->
+	<script src="{{url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+	<!-- Bootstrap -->
+	<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<!-- Waypoints -->
+	<script src="{{url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+	<!-- Flexslider -->
+	<script src="{{url_for('static', filename='js/jquery.flexslider-min.js')}}"></script>
+	<!-- Sticky Kit -->
+	<script src="{{url_for('static', filename='js/sticky-kit.min.js')}}"></script>
+	<!-- Owl carousel -->
+	<script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+	<!-- Counters -->
+	<script src="{{url_for('static', filename='js/jquery.countTo.js')}}"></script>
+
+
+	<!-- MAIN JS -->
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+	</body>
+</html>
+

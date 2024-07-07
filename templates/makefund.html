@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>E-Agri Kit</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="static/css/flexslider.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="static/fonts/flaticon/font/flaticon.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="static/css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="static/js/respond.min.js"></script>
+	<![endif]-->
+
+
+	</head>
+	<body>
+	<div id="colorlib-page">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+			<h1 id="colorlib-logo"><a href="#">E-Agri Kit</a></h1>
+			<nav id="colorlib-main-menu" role="navigation"><br><br><br><br>
+				<ul>
+					<li ><a href="/">Home</a></li>
+					<li><a href="/classify">Classification</a></li>
+					<li><a href="/crop">Crop Yeild Prediction</a></li>
+					<li><a href="/addcrop">Add Crop Information</a></li>
+					<li class="colorlib-active"><a href="/makefund">Make Founds</a></li>
+					<li><a href="/viewfunds">Funds Data</a></li>
+					<li><a href="/investorinfo">Investor Information</a></li>
+					<li><a href="/selling">Crop Selling</a></li>
+					<li><a href="/">Logout</a></li>
+				</ul>
+			</nav>
+
+<!--			<div class="colorlib-footer">-->
+<!--				<p><small>&copy; &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;-->
+<!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> Distributed by: <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>-->
+<!--&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt; </span> <span>Demo Images: <a href="http://nothingtochance.co/" target="_blank">nothingtochance.co</a></span></small></p>-->
+<!--				<ul>-->
+<!--					<li><a href="#"><i class="icon-facebook2"></i></a></li>-->
+<!--					<li><a href="#"><i class="icon-twitter2"></i></a></li>-->
+<!--					<li><a href="#"><i class="icon-instagram"></i></a></li>-->
+<!--					<li><a href="#"><i class="icon-linkedin2"></i></a></li>-->
+<!--				</ul>-->
+<!--			</div>-->
+
+		</aside>
+
+		<div id="colorlib-main">
+
+			<div class="colorlib-contact">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Welocme to</span>
+							<h2 class="colorlib-heading">Farmer Information Page</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="colorlib-icon" style="padding-left:100px;">
+<!--									<i class="icon-globe-outline"></i>-->
+								</div>
+<!--								<div class="colorlib-text">-->
+<!--									<p ><a href="#">Former</a></p>-->
+									<a href="#">
+
+							<div class="colorlib-feature colorlib-feature-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft" >
+											<br><br><br><br><img border="0" alt="W3Schools" src="static/images/money.jpg" style="height:400px;" >
+
+							</div></a>
+								</div>
+
+						</div>
+                          <center>{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				{% for category, message in messages %}
+					<div class="alert alert-{{ category }}">
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+
+		{% block content %} {% endblock %}
+ </center><br><br>
+						<div class="col-md-7 col-md-push-1">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
+									<center><h2 style="color:green"><b>Make Funds</b></h2></center>
+									<form action="{{url_for('fundsback')}}" method="post">
+										<div class="form-group">
+											<input type="text" name="cname" class="form-control" placeholder="Crop Name">
+										</div>
+<!--
+
+-->
+										<div class="form-group">
+											<input type="text" name="fname" class="form-control" placeholder="Farmer Name" required>
+										</div>
+                                         <div class="form-group">
+											<input type="tel"  name="pno" class="form-control" placeholder="Mobile Number..." pattern="[0-9]{10}" title="It must contain 10 numbers" required>
+										</div>
+										    <div class="form-group">
+											<input type="number" name="area" class="form-control" placeholder="Crop area" required>
+										</div>
+
+                                          <div class="form-group">
+											<input type="number" name="money" class="form-control" placeholder="Enter Money" required>
+										</div>
+
+										   <div class="form-group">
+											<input type="number" name="share" class="form-control" placeholder="Enter Shares" required>
+										</div>
+
+										<div class="form-group">
+											<textarea name="addr" id="message" cols="30" rows="7" class="form-control" placeholder="Locarion" required></textarea>
+										</div>
+										<div class="form-group">
+<!--											<input type="text" name="yeild" class="form-control" placeholder="Type of Soil" required>-->
+											 <select name="yeild" style="width: 775.5px;height: 52.5px;" required/>
+                                          <option value="">Choose Type of Soil</option>
+                                          <option value="Black soils">Black soils</option>
+                                          <option value="Red soils">Red soils</option>
+                                          <option value="Alluvial soils">Alluvial soils </option>
+                                          <option value="Red and Yellow soils ">Red and Yellow soils </option>
+                                          <option value="Arid soils">Arid soils</option>
+                                          <option value="Saline soils">Saline soils</option>
+                 </select>
+										</div>
+										<div class="form-group">
+											<input type="submit" class="btn btn-primary btn-send-message" value="Submit">
+<!--                                            <a href="{{ url_for('farmerlog')}}"  method="post" style="color: white;padding-bottom:50px;" class="btn btn-info" >Click here for login..</a>-->
+										</div>
+									</form>
+<!--									<img src="static/images/u.jpg">-->
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="map"></div>
+
+			<div id="get-in-touch" class="colorlib-bg-color">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<h2>Get in Touch!</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<p class="colorlib-lead">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<p><a href="#" class="btn btn-primary btn-learn">Contact me!</a></p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="static/js/jquery.flexslider-min.js"></script>
+	<!-- Sticky Kit -->
+	<script src="static/js/sticky-kit.min.js"></script>
+	<!-- Owl carousel -->
+	<script src="static/js/owl.carousel.min.js"></script>
+	<!-- Counters -->
+	<script src="static/js/jquery.countTo.js"></script>
+
+
+	<!-- MAIN JS -->
+	<script src="static/js/main.js"></script>
+
+	</body>
+</html>
+
